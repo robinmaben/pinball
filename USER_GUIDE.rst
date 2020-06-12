@@ -100,7 +100,7 @@ Overrun Policy
 --------------
 The overrun policy is what determines how a new run of a schedule should be brought up. If the overrun policy permits,
 run the owned schedule token, otherwise reschedule it at a later time. We say "try to start" because the workflow
-instance number is alos limited by the ``max_running_instances`` parameter. Note as well, that the schedule token's
+instance number is also limited by the ``max_running_instances`` parameter. Note as well, that the schedule token's
 ``next_run_time`` should be less than or equal to the current time to trigger the overrun policy to be checked.
 The following is an explanation along with an example of each overrun policy:
 
@@ -118,7 +118,7 @@ The following is an explanation along with an example of each overrun policy:
     * i.e. There are no updates for the token's expirationTime. If abort signal is net, try to start a new workflow instance,
       otherwise do nothing. It will only advance to the next run time after successfully starting a new workflow instance.
 * DELAY
-    * Hold off on beginning th execution until the previous runs have finished
+    * Hold off on beginning execution until the previous runs have finished
     * i.e. If there are no running instances, try to begin a new one, otherwise extend token's expirationTime. Only advance
       to the next run time after successfully starting a new workflow instance.
 * DELAY_UNTIL_SUCCESS
